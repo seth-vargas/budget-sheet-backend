@@ -1,0 +1,6 @@
+@BudgetSheetApi_HostAddress = http://localhost:5047
+
+GET {{BudgetSheetApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
