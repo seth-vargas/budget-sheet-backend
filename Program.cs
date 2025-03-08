@@ -6,10 +6,14 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+builder.Services.AddLogging();
 
 // Add services to the container.
+builder.Services.AddScoped<ILoggerService, LoggerService>();
+builder.Services.AddScoped<IErrorHandlerService, ErrorHandlerService>();
+
 builder.Services.AddScoped<IFrostTransactionService, FrostTransactionService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<BudgetSheetContext>(options =>
