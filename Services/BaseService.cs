@@ -24,6 +24,6 @@ public class BaseService : IBaseService
 
     public void HandleError(Exception ex)
     {
-        throw new NotImplementedException();
+        _errorHandler.HandleError(ex);
     }
 }

@@ -21,5 +21,12 @@ namespace BudgetSheetApi.Controllers
             var categories = await _categoryService.GetCategories();
             return Ok(categories);
         }
+
+        [HttpPost]
+        public async Task<ActionResult<CategoryModel>> CreateCategory([FromBody] NewCategory newCategory)
+        {
+            var category = await _categoryService.CreateCategory(newCategory);
+            return Ok(category);
+        }
     }
 }

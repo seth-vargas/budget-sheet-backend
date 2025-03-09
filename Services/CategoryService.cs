@@ -54,6 +54,7 @@ namespace BudgetSheetApi.Services
                     .ToListAsync();
 
                 response.SetSuccess("Successfully fetched categories.");
+                response.Values = categories;
             }
             catch (Exception ex)
             {
